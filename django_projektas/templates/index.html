@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo restoranas</title>
+</head>
+<body>
+    <!-- Forma pasirinkimui -->
+    <form method="post" action="">
+        {% csrf_token %}
+
+        <!-- Darbuotojų pasirinkimas -->
+        <label for="darbuotojas">Darbuotojas:</label>
+        <select name="darbuotojas" id="darbuotojas">
+            <option value="">--- Pasirinkite Darbuotoją ---</option>
+            {% for darbuotojas in darbuotojai %}
+            <option value="{{ darbuotojas.id }}">{{ darbuotojas.vardas }}</option>
+            {% endfor %}
+        </select>
+
+        <!-- Salės pasirinkimas -->
+        <label for="sale">Salė:</label>
+        <select name="sale" id="sale">
+            <option value="">--- Pasirinkite Salę ---</option>
+            {% for sale in sales %}
+            <option value="{{ sale.id }}">{{ sale.pavadinimas }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Filtruoti</button>
+    </form>
+
+    <!-- Atvaizduojama pasirinkta salė arba darbuotojas -->
+    {% if pasirinktas_darbuotojas %}
+    <h2>Pasirinktas darbuotojas: {{ pasirinktas_darbuotojas.vardas }}</h2>
+    {% endif %}
+
+    {% if pasirinkta_sale %}
+    <h2>Pasirinkta salė: {{ pasirinkta_sale.pavadinimas }}</h2>
+    {% endif %}
+
+    <!-- Atvaizduojami stalai -->
+    <ul>
+        {% for stalas in stalai %}
+            <li>Stalo numeris {{ stalas.numeris }} - {{ stalas.vietu_skaicius }} vietų</li>
+        {% empty %}
+            <li>Nerasta stalų</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

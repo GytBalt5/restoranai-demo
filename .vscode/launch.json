@@ -1,0 +1,53 @@
+{
+    "version": "0.0.1",
+    "configurations": [
+        {
+            "name": "PaleiskChrome",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://127.0.0.1:8000"
+        },
+        {
+            "name": "PaleiskFirefox",
+            "type": "firefox",
+            "request": "launch",
+            "url": "http://127.0.0.1:8000"
+        },
+        {
+            "name": "SukurkMigracijas",
+            "type": "python",
+            "request": "launch",
+            "python": "${workspaceFolder}/.venv/Scripts/python",
+            "program": "${workspaceFolder}/django_projektas/manage.py",
+            "args": [
+                "makemigrations"
+            ],
+            "django": true,
+            "justMyCode": true
+        },
+        {
+            "name": "Migruok",
+            "type": "python",
+            "request": "launch",
+            "python": "${workspaceFolder}/.venv/Scripts/python",
+            "program": "${workspaceFolder}/django_projektas/manage.py",
+            "args": [
+                "migrate"
+            ],
+            "django": true,
+            "justMyCode": true
+        },
+        {
+            "name": "PaleiskDjango",
+            "type": "python",
+            "request": "launch",
+            "python": "${workspaceFolder}/.venv/Scripts/python",
+            "program": "${workspaceFolder}/django_projektas/manage.py",
+            "args": [
+                "runserver"
+            ],
+            "django": true,
+            "justMyCode": true
+        }
+    ]
+}
