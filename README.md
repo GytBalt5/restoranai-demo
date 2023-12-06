@@ -73,3 +73,5 @@ Sekite komandinės eilutės instrukcijas, kad suvestumėte vartotojo vardą, el.
 ## 6. Naudojimasis Django Admin
 
 Norėdami naudotis Django admin sąsaja, eikite į http://localhost:8000/admin ir prisijunkite naudodami anksčiau sukurtus super vartotojo prisijungimo duomenis. Čia galėsite tvarkyti projektą susijusius duomenis, pvz., vartotojus, modelių įrašus ir kt.
+
+![Filtrai](./filtrai.png "Filtrai")
